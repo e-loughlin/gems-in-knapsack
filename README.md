@@ -1,15 +1,5 @@
 # Evolutionary Algorithm - Gems in a Knapsack
 
-   _____ ____ _____
-  /    /      \    \
-/____ /_________\____\
-\    \          /    /
-   \  \        /  /
-      \ \    / /
-        \ \/ /
-          \/
-
-
  This program is a simple demonstration of an evolutionary algorithm. 
  
  You have just discovered a hidden cave filled with an enormous cache
