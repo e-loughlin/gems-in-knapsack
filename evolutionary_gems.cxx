@@ -25,56 +25,45 @@
 #include <math.h>
 #include <vector>
 #include <random>
+#include <time.h>
 
 using namespace std;
 
 class knapsack
 {
 private:
-	int volumeCapacity;
-	int weightCapacity;
+	int volumeCapacity_;
+	int weightCapacity_;
 	int totalValueOfGems;
 	int totalWeight;
 	int totalVolumeRemaining;
 	vector<int> gems;
 
 public:
-	int volumeCapacity()
-	{
-		return this.volumeCapacity;
-	}
 
-	int weightCapacity()
-	{
-		return this.weightCapacity;
-	}
-
-	int setVolumeCapacity(capacity)
-	{
-		this.volumeCapacity = capacity;
-	}
-
-	int weightCapacity(capacity)
-	{
-		this.weightCapacity = capacity;
-	}
-
-	int totalValueOfGems()
+	int getTotalValueOfGems()
 	{
 		return totalValueOfGems;
 	}
 
-	int totalWeight()
+	int getTotalWeight()
 	{
 		return totalWeight;
 	}
 
-	int totalVolumeRemaining()
+	int getTotalVolumeRemaining()
 	{
 		return totalVolumeRemaining;
 	}
 
-}
+	knapsack(int volumeCapacity,
+			 int weightCapacity)
+	{
+		volumeCapacity_ = volumeCapacity;
+		weightCapacity_ = weightCapacity;
+	}
+
+};
 
 class gem
 {
@@ -85,36 +74,57 @@ private:
 public:
 	int getValue()
 	{
-		return this.value;
+		return value;
 	}
 
 	int getWeight()
 	{
-		return this.weight;
+		return weight;
 	}
-}
+
+	gem(int gemValue, int gemWeight)
+	{
+		value = gemValue;
+		weight = gemWeight;
+	}
+};
 
 class hiddenTreasure
 {
 private:
 	vector<gem> gems;
-	int valueLowerBound;
-	int valueUpperBound;
-	int numberOfGems;
 
 public:
-	void setNumberOfGems(int amount)
+
+	void printGemCacheData()
 	{
-		this.numberOfGems = amount;
+		cout << "Gem Data:\n\nValue\tWeight";
+		for(int i = 0; i < gems.size(); i++)
+		{
+			cout << gems[i].getValue() << "\t" << gems[i].getWeight() << endl;
+		}
 	}
 
-	void setValueLowerBound(int lowerBound)
-	{
-		this.valueLowerBound = lowerBound;
-	}
 
-	void setValueUpperBound(int upperBound)
+	hiddenTreasure(int valueLowerBound,
+				   int valueUpperBound,
+				   int weightLowerBound,
+				   int weightUpperBound,
+				   int numberOfGems)
 	{
-		this.valueUpperBound = upperBound;
+
+		srand(time(NULL));
+
+		for(int i = 0; i < numberOfGems; i++)
+		{
+			int currentGemValue = rand() % (valueUpperBound - valueLowerBound) + valueLowerBound;
+			int currentGemWeight = rand() % (valueUpperBound - valueLowerBound) + valueLowerBound;
+
+		}
 	}
+};
+
+int main()
+{
+	
 }
