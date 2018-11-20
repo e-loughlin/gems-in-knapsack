@@ -28,30 +28,52 @@
 
 using namespace std;
 
-
 class knapsack
 {
 private:
 	int volumeCapacity;
 	int weightCapacity;
 	int totalValueOfGems;
+	int totalWeight;
+	int totalVolumeRemaining;
 	vector<int> gems;
 
 public:
-	int getVolumeCapacity()
+	int volumeCapacity()
 	{
 		return this.volumeCapacity;
 	}
 
-	int getWeightCapacity()
+	int weightCapacity()
 	{
 		return this.weightCapacity;
 	}
 
+	int setVolumeCapacity(capacity)
+	{
+		this.volumeCapacity = capacity;
+	}
+
+	int weightCapacity(capacity)
+	{
+		this.weightCapacity = capacity;
+	}
+
 	int totalValueOfGems()
 	{
-		for (int i = 0)
+		return totalValueOfGems;
 	}
+
+	int totalWeight()
+	{
+		return totalWeight;
+	}
+
+	int totalVolumeRemaining()
+	{
+		return totalVolumeRemaining;
+	}
+
 }
 
 class gem
@@ -78,8 +100,21 @@ private:
 	vector<gem> gems;
 	int valueLowerBound;
 	int valueUpperBound;
-	int 
+	int numberOfGems;
 
 public:
-	void setNumberOfGems
+	void setNumberOfGems(int amount)
+	{
+		this.numberOfGems = amount;
+	}
+
+	void setValueLowerBound(int lowerBound)
+	{
+		this.valueLowerBound = lowerBound;
+	}
+
+	void setValueUpperBound(int upperBound)
+	{
+		this.valueUpperBound = upperBound;
+	}
 }
