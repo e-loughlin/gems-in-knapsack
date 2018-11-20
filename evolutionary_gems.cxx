@@ -34,26 +34,26 @@ class knapsack
 private:
 	int volumeCapacity_;
 	int weightCapacity_;
-	int totalValueOfGems;
-	int totalWeight;
-	int totalVolumeRemaining;
+	int totalValueOfGems_;
+	int totalWeight_;
+	int totalVolumeRemaining_;
 	vector<int> gems;
 
 public:
 
-	int getTotalValueOfGems()
+	int totalValueOfGems()
 	{
-		return totalValueOfGems;
+		return totalValueOfGems_;
 	}
 
-	int getTotalWeight()
+	int totalWeight()
 	{
-		return totalWeight;
+		return totalWeight_;
 	}
 
-	int getTotalVolumeRemaining()
+	int totalVolumeRemaining()
 	{
-		return totalVolumeRemaining;
+		return totalVolumeRemaining_;
 	}
 
 	knapsack(int volumeCapacity,
@@ -98,13 +98,12 @@ public:
 
 	void printGemCacheData()
 	{
-		cout << "Gem Data:\n\nValue\tWeight";
+		cout << "All The Gems In The Hidden Treasure:\n\nValue\tWeight\n";
 		for(int i = 0; i < gems.size(); i++)
 		{
 			cout << gems[i].getValue() << "\t" << gems[i].getWeight() << endl;
 		}
 	}
-
 
 	hiddenTreasure(int valueLowerBound,
 				   int valueUpperBound,
@@ -118,13 +117,15 @@ public:
 		for(int i = 0; i < numberOfGems; i++)
 		{
 			int currentGemValue = rand() % (valueUpperBound - valueLowerBound) + valueLowerBound;
-			int currentGemWeight = rand() % (valueUpperBound - valueLowerBound) + valueLowerBound;
-
+			int currentGemWeight = rand() % (weightUpperBound - weightLowerBound) + weightLowerBound;
+			gems.push_back(gem(currentGemValue, currentGemWeight));
 		}
 	}
 };
 
+
 int main()
 {
-	
+	hiddenTreasure ht = hiddenTreasure(20, 100, 5, 30, 50);
+	ht.printGemCacheData();
 }
