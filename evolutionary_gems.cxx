@@ -123,6 +123,15 @@ public:
 	}
 };
 
+bool mutate(knapsack* currentKnapsack)
+{
+	srand(time(NULL));
+}
+
+bool crossover(knapsack* firstKnapsack, knapsack* secondKnapsack)
+{
+
+}
 
 int main()
 {
